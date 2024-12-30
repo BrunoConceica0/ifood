@@ -1,32 +1,59 @@
 <template>
   <div id="app">
-    <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </nav>
-    <router-view/>
+    <Header />
+    <main id="main">
+      <router-view />
+    </main>
+    <Footer />
   </div>
 </template>
 
+<script>
+import Header from "./components/Header.vue";
+import Footer from "./components/Footer.vue";
+
+export default {
+  components: { Header, Footer },
+  name: "App",
+};
+</script>
+
 <style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+body {
+  font-family: "Work Sans", system-ui;
+}
+:root {
+  --color-bg: #fff;
+  --color-text-main: #3f3e3e;
+  --color-text-secund: #7a7a7a;
+  --color-text-trity: #717171;
+  --color-bg-secund: #f7f7f7;
+
+  --color-ifood: #ea1d2c;
+  /* Fonts */
+
+  --font-mp0: 400 1.2rem/1.2 "Work Sans", system-ui;
+  --font-mp1: 500 1.4rem/1.3 "Work Sans", system-ui;
+  --font-mp2: 500 1.8rem/1.3 "Work Sans", system-ui;
+  --font-bp1: 600 1.4rem/1.3 "Work Sans", system-ui;
+}
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
-
-nav {
-  padding: 30px;
+#main {
+  flex: 1;
 }
-
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
+img {
+  max-width: 100%;
+  height: 100%;
 }
 </style>
