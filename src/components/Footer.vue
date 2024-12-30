@@ -77,10 +77,18 @@
       </div>
       <div class="footer__copyright-terms">
         <ul class="footer__list-item">
-          <li><router-link to="#">Termos e condições de uso</router-link></li>
-          <li><router-link to="#"> Código de conduta</router-link></li>
-          <li><router-link to="#"> Privacidade</router-link></li>
-          <li><router-link to="#">Dicas de segurança</router-link></li>
+          <li class="footer__list-link">
+            <router-link to="#">Termos e condições de uso</router-link>
+          </li>
+          <li class="footer__list-link">
+            <router-link to="#"> Código de conduta</router-link>
+          </li>
+          <li class="footer__list-link">
+            <router-link to="#"> Privacidade</router-link>
+          </li>
+          <li class="footer__list-link">
+            <router-link to="#">Dicas de segurança</router-link>
+          </li>
         </ul>
       </div>
     </section>
@@ -94,9 +102,8 @@ export default {};
 <style scoped>
 .footer {
   width: 100%;
-  max-width: 1350px;
+  max-width: 1450px;
   margin: 0 auto;
-  padding: 600px 0;
   position: relative;
   top: 75px;
   right: 0;
@@ -109,13 +116,13 @@ export default {};
   gap: 20px;
   border-top: 1px solid rgba(0, 0, 0, 0.2);
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-  padding: 50px 0;
+  padding: 20px 0;
 }
 .footer__subtitle {
   color: #3e3e3e;
   font-weight: 500;
   line-height: 19.52px;
-  margin-bottom: 30px;
+  margin: 20px 0;
   font-size: 18.4px;
 }
 .footer__links-list {
@@ -123,8 +130,7 @@ export default {};
   grid-auto-columns: 1fr;
   grid-template-rows: repeat(5, min-content);
   grid-auto-flow: column;
-  grid-gap: 24px;
-  gap: 24px;
+  gap: 30px;
   margin-bottom: 24px;
 }
 .footer__list-item a {
@@ -139,16 +145,34 @@ export default {};
   flex-direction: row;
   justify-content: start;
   gap: 20px;
+  margin: 50px 0px;
 }
 .footer__copyright-inf {
   display: flex;
   flex-direction: column;
 }
 .footer__copyright-terms {
+  width: 950px;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: end;
+}
+.footer__list-item {
   display: flex;
   flex-direction: row;
+  width: max-content;
+}
+.footer__list-link {
+  padding: 15px 10px;
 }
 .footer-img img {
   width: 70px;
+}
+.footer__copyright-inf span {
+  color: #717171;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 17.55px;
 }
 </style>
