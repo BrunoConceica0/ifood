@@ -71,6 +71,7 @@ export default {
   border-radius: 0.8rem;
   border: none;
   padding-left: 5rem;
+  max-width: 700px;
 }
 .search-field::placeholder {
   font: var(--font-mp1);

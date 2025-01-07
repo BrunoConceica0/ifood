@@ -17,6 +17,7 @@
     </article>
     <InputSearch />
     <HeaderStore />
+    <Location />
   </header>
 </template>
 
@@ -25,9 +26,10 @@ import { mapActions, mapState } from "vuex";
 
 import InputSearch from "@/components/HeaderComponents/InputSearch";
 import HeaderStore from "@/components/HeaderComponents/HeaderStore";
+import Location from "@/components/HeaderComponents/Location";
 export default {
   name: "Header",
-  components: { InputSearch, HeaderStore },
+  components: { InputSearch, HeaderStore, Location },
   methods: {
     ...mapActions([]),
     ...mapState([]),
@@ -36,6 +38,13 @@ export default {
 </script>
 
 <style scoped>
+#header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+}
 .header-content {
   display: flex;
   justify-content: space-between;

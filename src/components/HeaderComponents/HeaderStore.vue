@@ -52,6 +52,7 @@
       </div>
     </transition>
   </section>
+  <!-- Modal Location -->
 </template>
 
 <script>
@@ -138,6 +139,7 @@ button {
 .restaurant-cart__empty-content {
   position: fixed;
   display: flex;
+  background: #fff;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -147,7 +149,7 @@ button {
   top: 95px;
   z-index: 100;
   right: 0;
-  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 .estaurant-cart__empty-content-large {
   color: #3e3e3e;

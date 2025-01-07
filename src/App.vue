@@ -1,19 +1,11 @@
 <template>
   <div id="app">
-    <Header />
-    <main id="main">
-      <router-view />
-    </main>
-    <Footer />
+    <router-view />
   </div>
 </template>
 
 <script>
-import Header from "./components/Header.vue";
-import Footer from "./components/Footer.vue";
-
 export default {
-  components: { Header, Footer },
   name: "App",
 };
 </script>
@@ -44,14 +36,7 @@ body {
   --font-mp2: 500 1.8rem/1.3 "Work Sans", system-ui;
   --font-bp1: 600 1.4rem/1.3 "Work Sans", system-ui;
 }
-#app {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-#main {
-  flex: 1;
-}
+
 img {
   max-width: 100%;
   height: 100%;

@@ -1,12 +1,10 @@
 <template>
-  <div>
-    <router-view />
-  </div>
+  <section></section>
 </template>
 
 <script>
 export default {
-  name: "Home",
+  name: "Restaunt",
 };
 </script>
 
