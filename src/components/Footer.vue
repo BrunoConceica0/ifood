@@ -65,7 +65,7 @@
       <div class="footer-img">
         <img src="../assets/icon/ifood-43.svg" alt="ifood marca" />
       </div>
-      <div class="footer__copyright-inf">
+      <div class="footer__copyright-inf flex-col">
         <span
           >Voltar para a home © Copyright 2021 - iFood - Todos os direitos
           reservados iFood com Agência de Restaurantes Online S.A.</span
@@ -119,7 +119,7 @@ export default {};
   padding: 20px 0;
 }
 .footer__subtitle {
-  color: #3e3e3e;
+  color: var(--cor-text-primary);
   font-weight: 500;
   line-height: 19.52px;
   margin: 20px 0;
@@ -134,7 +134,7 @@ export default {};
   margin-bottom: 24px;
 }
 .footer__list-item a {
-  color: #717171;
+  color: var(--cor-text-secondary);
   text-align: start;
   font-size: 18.4px;
   font-weight: 400;
@@ -146,10 +146,6 @@ export default {};
   justify-content: start;
   gap: 20px;
   margin: 50px 0px;
-}
-.footer__copyright-inf {
-  display: flex;
-  flex-direction: column;
 }
 .footer__copyright-terms {
   width: 950px;

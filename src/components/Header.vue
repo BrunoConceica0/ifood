@@ -17,7 +17,6 @@
     </article>
     <InputSearch />
     <HeaderStore />
-    <Location />
   </header>
 </template>
 
@@ -26,10 +25,9 @@ import { mapActions, mapState } from "vuex";
 
 import InputSearch from "@/components/HeaderComponents/InputSearch";
 import HeaderStore from "@/components/HeaderComponents/HeaderStore";
-import Location from "@/components/HeaderComponents/Location";
 export default {
   name: "Header",
-  components: { InputSearch, HeaderStore, Location },
+  components: { InputSearch, HeaderStore },
   methods: {
     ...mapActions([]),
     ...mapState([]),
@@ -43,7 +41,7 @@ export default {
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 100;
+  /* z-index: 100; */
 }
 .header-content {
   display: flex;
@@ -65,7 +63,7 @@ export default {
   height: 4.7rem;
 }
 .header-nav__list li {
-  color: var(--color-text-main);
+  color: var(--cor-text-secondary);
 }
 .header-nav__list a {
   font: var(--font-mp1);

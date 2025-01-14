@@ -2,7 +2,7 @@
   <section class="store-content">
     <div class="store-content__feild">
       <div class="store-content__item">
-        <button class="store__btn">
+        <button class="store__btn" @click="location = !location">
           Proxímo de você
           <i class="bi bi-arrow-down"></i>
         </button>
@@ -21,6 +21,7 @@
           </div>
         </button>
       </div>
+      <Location v-if="location" />
     </div>
 
     <!-- Modal Store -->
@@ -56,13 +57,17 @@
 </template>
 
 <script>
+import Location from "@/components/HeaderComponents/Location";
+
 export default {
   name: "HeaderStoreComponent",
+  components: { Location },
   data() {
     return {
       totalTrolley: 0,
       itemsTrolley: 0,
       restaurantCart: false,
+      location: false,
     };
   },
   methods: {
@@ -147,7 +152,7 @@ button {
   max-width: 100%;
   height: 100vh;
   top: 95px;
-  z-index: 100;
+  z-index: 1000;
   right: 0;
   box-shadow: 0 3px 4px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.1);
 }

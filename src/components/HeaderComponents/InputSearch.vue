@@ -63,10 +63,10 @@ export default {
 .search-input__field {
   position: relative;
   width: 100%;
-  padding: 0 5px;
+  padding: 0 0.5rem;
 }
 .search-field {
-  background: var(--color-bg-secund);
+  background: var(--cor-feild-input);
   padding: 2rem;
   border-radius: 0.8rem;
   border: none;
@@ -95,15 +95,15 @@ export default {
 .search-recent {
   font: var(--font-mp1);
   background: var(--color-bg);
-  z-index: 200;
+  z-index: 900;
   position: absolute;
   width: 100%;
-  max-width: 70rem;
+  max-width: 65rem;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   border-radius: 4px;
 }
 .search-recent__field p {
-  color: var(--color-text-main);
+  color: var(--cor-text-primary);
   font: var(--font-mp2);
   padding: 2rem 1rem 0 2rem;
 }
@@ -111,10 +111,10 @@ export default {
   padding: 1.5rem 1.5rem 1rem 1.5rem;
 }
 .search-recent__field li:hover {
-  background: var(--color-bg-secund);
+  background: var(--cor-feild-input);
 }
 .search-recent__field a {
-  color: var(--color-text-secund);
+  color: var(--cor-text-secondary);
 }
 .bi-arrow-clockwise {
   font-size: 1.4rem;

@@ -21,9 +21,9 @@ const routes = [
     ],
   },
   {
-    path: "/Header",
-    name: "Header",
-    component: () => import("@/components/Header"),
+    path: "/login",
+    component: () => import("@/views/Login"),
+    nome: "login",
   },
   {
     path: "*",
