@@ -1,5 +1,5 @@
 <template>
-  <div class="marmita-modal__inner-content">
+  <div class="marmita-modal__inner-content" @click="closeModal" v-if="modal">
     <div class="marmita-modal__inner-content-scroll">
       <div class="marmita-modal__inner-content__img">
         <img
@@ -39,7 +39,7 @@
               >Entre na sua conta para selecionar seu endereço.</span
             >
             <div>
-              <button class="address-register">
+              <button class="address-register btn">
                 <router-link :to="{ path: 'login' }">
                   Entre ou cadastre</router-link
                 >
@@ -72,11 +72,17 @@ export default {
     return {
       anddress: null,
       location: false,
+      modal: true,
     };
   },
   methods: {
     locationOpen() {
       this.location = true;
+    },
+    closeModal({ target, currentTarget }) {
+      if (currentTarget === target) this.modal = false;
+      console.log(currentTarget, target);
+      console.log(this.modal);
     },
   },
 };
@@ -150,11 +156,6 @@ button:focus {
   max-width: 70rem;
   text-align: start;
 }
-.address-search-input__field input {
-  background: red;
-  border: none;
-
-}
 .bi-search {
   padding-right: 2rem;
   font-size: 2rem;
@@ -169,18 +170,20 @@ button:focus {
   color: var(--cor-text-primary);
   padding-right: 2rem;
 }
+
 .btn-address--full-size:hover {
   box-shadow: -2px 3px 8px rgba(0, 0, 0, 0.2), 1px -1px 4px rgba(0, 0, 0, 0.1);
   transition: 0.3s ease-in-out;
 }
 .address__subtitle {
   text-align: center;
-  font: var(--font-lp0);
+  font: var(--font-lp1);
   margin: 0.7rem;
+  color: var(--cor-text-input);
 }
 .address-text {
   display: block;
-  color: var(--cor-text-secondary);
+  color: var(--cor-span);
   text-align: center;
   font: var(--font-mp1);
 }
@@ -194,7 +197,7 @@ button:focus {
 }
 .address-register a {
   color: var(--color-ifood);
-  font: var(--font-mp1);
+  font: var(--font-mp3);
   width: 100%;
   max-width: max-content;
 }
