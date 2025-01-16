@@ -45,23 +45,23 @@
       </div>
       <div class="footer-column">
         <h3 class="footer__subtitle">Social</h3>
-        <ul class="footer__links-social">
+        <ul class="footer__links-social flex-row">
           <li>
-            <router-link to="#">f</router-link>
+            <router-link to="#"><i class="bi bi-facebook"></i></router-link>
           </li>
           <li>
-            <router-link to="#">w</router-link>
+            <router-link to="#"> <i class="bi bi-twitter-x"></i></router-link>
           </li>
           <li>
-            <router-link to="#">y</router-link>
+            <router-link to="#"><i class="bi bi-youtube"></i></router-link>
           </li>
           <li>
-            <router-link to="#">i</router-link>
+            <router-link to="#"><i class="bi bi-instagram"></i></router-link>
           </li>
         </ul>
       </div>
     </section>
-    <section class="footer__copyright">
+    <section class="footer__copyright flex-row">
       <div class="footer-img">
         <img src="../assets/icon/ifood-43.svg" alt="ifood marca" />
       </div>
@@ -102,10 +102,10 @@ export default {};
 <style scoped>
 .footer {
   width: 100%;
-  max-width: 1450px;
+  max-width: 145rem;
   margin: 0 auto;
   position: relative;
-  top: 75px;
+  top: 7.5rem;
   right: 0;
 }
 .footer-main {
@@ -113,39 +113,50 @@ export default {};
   grid-template-columns: repeat(4, 1fr);
   align-items: start;
   justify-items: start;
-  gap: 20px;
+  gap: 2rem;
   border-top: 1px solid rgba(0, 0, 0, 0.2);
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-  padding: 20px 0;
+  padding: 2rem 0;
 }
 .footer__subtitle {
   color: var(--cor-text-primary);
   font-weight: 500;
   line-height: 19.52px;
-  margin: 20px 0;
-  font-size: 18.4px;
+  margin: 2rem 0;
+  font-size: 1.84rem;
 }
+.footer__links-social {
+  gap: 4rem;
+}
+.bi {
+  color: var(--cor-text-secondary);
+  font-size: 3rem;
+}
+.bi:hover {
+  color: var(--cor-text-primary);
+}
+
 .footer__links-list {
   display: grid;
   grid-auto-columns: 1fr;
   grid-template-rows: repeat(5, min-content);
   grid-auto-flow: column;
-  gap: 30px;
-  margin-bottom: 24px;
+  gap: 3rem;
+  margin-bottom: 2.4rem;
 }
 .footer__list-item a {
   color: var(--cor-text-secondary);
   text-align: start;
-  font-size: 18.4px;
-  font-weight: 400;
+  font: var(--font-lp1);
+}
+.footer__list-item a:hover {
+  color: var(--cor-text-primary);
 }
 
 .footer__copyright {
-  display: flex;
-  flex-direction: row;
   justify-content: start;
-  gap: 20px;
-  margin: 50px 0px;
+  gap: 2rem;
+  margin: 5rem 0;
 }
 .footer__copyright-terms {
   width: 950px;
@@ -160,15 +171,15 @@ export default {};
   width: max-content;
 }
 .footer__list-link {
-  padding: 15px 10px;
+  padding: 1.5rem 1rem;
 }
 .footer-img img {
-  width: 70px;
+  width: 7rem;
 }
 .footer__copyright-inf span {
-  color: #717171;
-  font-size: 14px;
+  color: var(--cor-text-secondary);
+  font-size: 1.4rem;
   font-weight: 400;
-  line-height: 17.55px;
+  line-height: 1.75rem;
 }
 </style>
