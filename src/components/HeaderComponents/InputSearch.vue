@@ -94,7 +94,7 @@ export default {
 }
 .search-recent {
   font: var(--font-mp1);
-  background: var(--color-bg);
+  background: var(--cor-bg);
   z-index: 900;
   position: absolute;
   width: 100%;

@@ -10,6 +10,10 @@ const routes = [
     component: () => import("@/Ifood"),
     children: [
       {
+        path: "inicio",
+        component: () => import("@/components/StartComponents/Start"),
+      },
+      {
         path: "restaunt",
         component: () => import("@/views/Restaunt"),
       },

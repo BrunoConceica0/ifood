@@ -25,5 +25,6 @@ export default {
 }
 #main {
   flex: 1;
+  margin-top: 150px;
 }
 </style>

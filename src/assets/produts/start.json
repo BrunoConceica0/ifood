@@ -1,0 +1,21 @@
+[
+  {
+    "id": "",
+    "name": "Restaurante",
+    "img": "@/assets/image/category-start/sandwich.png"
+  },
+  {
+    "name": "Mercado",
+    "img": "@/assets/image/category-start/store.png"
+  },
+  {
+    "id": "",
+    "name": "Farmácia",
+    "img": "@/assets/image/category-start/pharmacy.png"
+  },
+  {
+    "id": "",
+    "name": "Bebidas",
+    "img": "@/assets/image/category-start/drinks.png"
+  }
+]

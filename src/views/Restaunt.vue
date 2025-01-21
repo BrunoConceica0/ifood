@@ -1,5 +1,7 @@
 <template>
-  <section></section>
+  <section>
+    <h1>Restaurante</h1>
+  </section>
 </template>
 
 <script>

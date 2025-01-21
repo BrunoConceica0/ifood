@@ -6,7 +6,9 @@
       </div>
       <nav class="header-nav" aria-label="Navegação Principal">
         <ul class="header-nav__list">
-          <router-link class="active-hover" to="/"><li>Início</li></router-link>
+          <router-link class="active-hover" :to="{ path: 'inicio' }"
+            ><li>Início</li></router-link
+          >
           <router-link to="/"><li>Restaurante</li></router-link>
           <router-link to="/"><li>Mercado</li></router-link>
           <router-link to="/"><li>Bebibas</li></router-link>
@@ -41,7 +43,8 @@ export default {
   top: 0;
   left: 0;
   width: 100%;
-  /* z-index: 100; */
+  z-index: 1000;
+  background: var(--cor-bg);
 }
 .header-content {
   display: flex;
@@ -75,5 +78,8 @@ export default {
 }
 .header-content {
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+.router-link-exact-active {
+  color: var(--color-ifood);
 }
 </style>
