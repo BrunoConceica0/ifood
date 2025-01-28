@@ -1,41 +1,44 @@
 <template>
   <section>
-    <form action="#" class="search-input__field" @click="closeModal">
+    <form
+      action="#"
+      class="search-input__field"
+      @submit.prevent
+      @click="closeModal"
+    >
       <div @click="fieldReachtRecent">
         <input
           class="search-field"
           type="text"
           v-model="searchItem"
           placeholder="Busque por item ou loja"
+          aria-label="Campo de busca por item ou loja"
         />
-        <button class="search-btn" type="submit" name="search" id="search">
+        <button
+          class="search-btn"
+          type="submit"
+          name="search"
+          id="search"
+          aria-label="Buscar"
+        >
           <i class="bi bi-search"></i>
         </button>
       </div>
     </form>
-    <section v-if="searchModal" class="search-recent">
-      <ul class="search-recent__field">
-        <p>Buscas recentes</p>
-        <router-link to="/"
-          ><li class="bi bi-arrow-clockwise">Início</li></router-link
-        >
-        <router-link to="/"
-          ><li class="bi bi-arrow-clockwise">Restaurante</li></router-link
-        >
-        <router-link to="/"
-          ><li class="bi bi-arrow-clockwise">Mercado</li></router-link
-        >
-        <router-link to="/"
-          ><li class="bi bi-arrow-clockwise">Bebibas</li></router-link
-        >
-        <router-link to="/"
-          ><li class="bi bi-arrow-clockwise">Farmácia</li></router-link
-        >
-        <router-link to="/"
-          ><li class="bi bi-arrow-clockwise">Shopping</li></router-link
-        >
-      </ul>
-    </section>
+
+    <!-- Cobertura do modal -->
+    <div v-if="searchModal" class="search-modal-overlay" @click="closeModal">
+      <section class="search-recent" @click.stop>
+        <ul class="search-recent__field">
+          <p>Buscas recentes</p>
+          <li v-for="(item, index) in recentSearches" :key="index">
+            <router-link :to="item.link">
+              <i class="bi bi-arrow-clockwise"></i> {{ item.label }}
+            </router-link>
+          </li>
+        </ul>
+      </section>
+    </div>
   </section>
 </template>
 
@@ -46,6 +49,14 @@ export default {
     return {
       searchItem: null,
       searchModal: false,
+      recentSearches: [
+        { label: "Início", link: "/" },
+        { label: "Restaurante", link: "/" },
+        { label: "Mercado", link: "/" },
+        { label: "Bebidas", link: "/drinks" },
+        { label: "Farmácia", link: "/" },
+        { label: "Shopping", link: "/" },
+      ],
     };
   },
   methods: {
@@ -53,13 +64,16 @@ export default {
       this.searchModal = true;
     },
     closeModal({ target, currentTarget }) {
-      if (target === currentTarget) this.searchModal = false;
+      if (target === currentTarget) {
+        this.searchModal = false;
+      }
     },
   },
 };
 </script>
 
 <style scoped>
+/* Campo de busca */
 .search-input__field {
   position: relative;
   width: 100%;
@@ -77,7 +91,6 @@ export default {
   font: var(--font-mp1);
 }
 .search-field:focus {
-  border: none;
   outline: none;
 }
 .search-btn {
@@ -92,6 +105,8 @@ export default {
 .search-btn:focus {
   outline: none;
 }
+
+/* Resultados recentes */
 .search-recent {
   font: var(--font-mp1);
   background: var(--cor-bg);
@@ -102,22 +117,31 @@ export default {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   border-radius: 4px;
 }
+.search-recent__field {
+  padding: 1rem 0;
+}
 .search-recent__field p {
   color: var(--cor-text-primary);
   font: var(--font-mp2);
-  padding: 2rem 1rem 0 2rem;
+  padding: 1rem 2rem;
 }
 .search-recent__field li {
-  padding: 1.5rem 1.5rem 1rem 1.5rem;
+  padding: 1rem 2rem;
+  list-style: none;
+  transition: background 0.2s;
 }
 .search-recent__field li:hover {
   background: var(--cor-feild-input);
 }
 .search-recent__field a {
   color: var(--cor-text-secondary);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 .bi-arrow-clockwise {
   font-size: 1.4rem;
-  color: var(--color-text-secund);
+  color: var(--cor-text-secondary);
 }
 </style>

@@ -1,0 +1,42 @@
+[
+  {
+    "id": "sandwich",
+    "name": "Lanche",
+    "img": "@/assets/image/category-start/sandwich.png"
+  },
+  {
+    "id": "pizza",
+    "name": "Pizza",
+    "img": "@/assets/image/category-start/store.png"
+  },
+  {
+    "id": "promotion",
+    "name": "Promoção",
+    "img": "@/assets/image/category-start/pharmacy.png"
+  },
+  {
+    "id": "japonese",
+    "name": "Japonesa",
+    "img": "@/assets/image/category-start/drinks.png"
+  },
+  {
+    "id": "sandwich",
+    "name": "Lanche",
+    "img": "@/assets/image/category-start/sandwich.png"
+  },
+  {
+    "id": "pizza",
+    "name": "Pizza",
+    "img": "@/assets/image/category-start/store.png"
+  },
+  {
+    "id": "promotion",
+    "name": "Promoção",
+    "img": "@/assets/image/category-start/pharmacy.png"
+  },
+  {
+    "id": "japonese",
+    "name": "Japonesa",
+    "img": "@/assets/image/category-start/drinks.png"
+  }
+]
