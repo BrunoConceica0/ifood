@@ -1,10 +1,10 @@
 import axios from "axios";
 
-export async function getCategories(categoryId) {
-  const urlcomplete = `http://localhost:3000${categoryId}`;
+export async function getCategories(item) {
+  const urlcomplete = `http://localhost:3000/${item}`;
 
   try {
-    const response = await axios.get(urlcomplete);
+    const response = (await axios.get(urlcomplete)).data;
     console.log(response);
     return response;
   } catch (error) {
