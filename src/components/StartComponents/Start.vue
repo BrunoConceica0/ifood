@@ -27,7 +27,7 @@
 </template>
 
 <script>
-import { getCategoriesRestaunt } from "@/axios/getCategoriesRestaunt";
+// import { getCategoriesRestaunt } from "@/axios/getCategoriesRestaunt";
 export default {
   data() {
     return {
@@ -36,15 +36,15 @@ export default {
     };
   },
   methods: {
-    async fetchCategory() {
-      try {
-        const categories = await getCategoriesRestaunt();
-        this.categories = categories;
-        this.error = null; // Limpa qualquer erro anterior
-      } catch (error) {
-        this.error = "Não foi possível carregar as categorias."; // Exibe uma mensagem de erro}
-      }
-    },
+    // async fetchCategory() {
+    //   try {
+    //     const categories = await getCategoriesRestaunt();
+    //     this.categories = categories;
+    //     this.error = null; // Limpa qualquer erro anterior
+    //   } catch (error) {
+    //     this.error = "Não foi possível carregar as categorias."; // Exibe uma mensagem de erro}
+    //   }
+    // },
   },
   created() {
     this.fetchCategory();

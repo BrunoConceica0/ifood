@@ -6,27 +6,26 @@
 </template>
 
 <script>
-import { getCategoryRestaunt } from "@/axios/getCategoryRestaunt";
+import { getCategories } from "@/axios/getCategories";
 export default {
   data() {
     return {
       categories: [], // Armazena as categorias carregadas
-      error: null, // Para armazenar erros
     };
   },
   methods: {
     async fetchCategory() {
-      try {
-        const response = await getCategoryRestaunt();
-        this.categories = response.data;
-        this.error = null; // Limpa qualquer erro anterior
-      } catch (error) {
-        this.error = "Não foi possível carregar as categorias."; // Exibe uma mensagem de erro
-      }
+      const categoryId = this.$route.params.categoryId || "restaurant";
+      this.categories = await getCategories(categoryId);
     },
   },
   created() {
     this.fetchCategory();
+  },
+  watch: {
+    "$route.params.categoryId"(newCategory) {
+      this.fetchCategory(newCategory);
+    },
   },
 };
 </script>

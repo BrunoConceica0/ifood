@@ -10,7 +10,7 @@ const routes = [
     component: () => import("@/Ifood"),
     children: [
       {
-        path: "inicio",
+        path: "start",
         component: () => import("@/components/StartComponents/Start"),
       },
       {

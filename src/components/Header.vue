@@ -6,14 +6,20 @@
       </div>
       <nav class="header-nav" aria-label="Navegação Principal">
         <ul class="header-nav__list">
-          <router-link class="active-hover" :to="{ path: 'inicio' }"
-            ><li>Início</li></router-link
+          <li
+            v-for="({ name, link }, index) in navigation"
+            :key="index"
+            @click="setActive(index)"
+            :class="{ active: activeIndex === index }"
           >
-          <router-link to="/"><li>Restaurante</li></router-link>
-          <router-link to="/"><li>Mercado</li></router-link>
-          <router-link to="/"><li>Bebibas</li></router-link>
-          <router-link to="/"><li>Farmácia</li></router-link>
-          <router-link to="/"><li>Shopping</li></router-link>
+            <router-link
+              :to="link"
+              :class="{ active: $route.path === link }"
+              aria-current="$route.path === link ? 'page' : null"
+            >
+              {{ name }}
+            </router-link>
+          </li>
         </ul>
       </nav>
     </article>
@@ -23,16 +29,23 @@
 </template>
 
 <script>
-import { mapActions, mapState } from "vuex";
-
 import InputSearch from "@/components/HeaderComponents/InputSearch";
 import HeaderStore from "@/components/HeaderComponents/HeaderStore";
+import { navigationLinks } from "@/constants/navigationLinks";
+
 export default {
   name: "Header",
+  data() {
+    return {
+      navigation: navigationLinks,
+      activeIndex: null, // Índice do item ativo
+    };
+  },
   components: { InputSearch, HeaderStore },
   methods: {
-    ...mapActions([]),
-    ...mapState([]),
+    setActive(index) {
+      this.activeIndex = index;
+    },
   },
 };
 </script>
@@ -45,41 +58,36 @@ export default {
   width: 100%;
   z-index: 1000;
   background: var(--cor-bg);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
 .header-content {
   display: flex;
   justify-content: space-between;
 }
-
 .header-container {
   display: flex;
-  flex-direction: row;
   align-items: center;
   gap: 2rem;
 }
 .header-nav__list {
   display: flex;
-  flex-direction: row;
 }
 .header-img img {
   width: 5.6rem;
   height: 4.7rem;
 }
 .header-nav__list li {
-  color: var(--cor-text-secondary);
-}
-.header-nav__list a {
-  font: var(--font-mp1);
   padding: 0.8rem 1rem;
+  cursor: pointer;
+  transition: color 0.2s ease-in-out;
 }
-.header-nav__list li:hover {
-  color: var(--color-ifood);
-  transition: 0.2s all ease-in-out;
+.header-nav__list li > a {
+  color: var(--cor-text-secondary);
+  font: var(--font-mp1);
 }
-.header-content {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-}
-.router-link-exact-active {
+.header-nav__list li.active > a,
+.header-nav__list a:hover,
+.active {
   color: var(--color-ifood);
 }
 </style>

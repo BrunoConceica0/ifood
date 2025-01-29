@@ -1,0 +1,67 @@
+{
+  "restaurant": [
+    {
+      "id": "sandwich",
+      "name": "Lanche",
+      "img": "/img-categoryies/sandwich.png"
+    },
+    {
+      "id": "pizza",
+      "name": "Pizza",
+      "img": "/img-categoryies/store.png"
+    },
+    {
+      "id": "promotion",
+      "name": "Promoção",
+      "img": "/img-categoryies/pharmacy.png"
+    },
+    {
+      "id": "japonese",
+      "name": "Japonesa",
+      "img": "/img-categoryies/drinks.png"
+    },
+    {
+      "id": "sandwich",
+      "name": "Lanche",
+      "img": "/img-categoryies/sandwich.png"
+    },
+    {
+      "id": "pizza",
+      "name": "Pizza",
+      "img": "/img-categoryies/store.png"
+    },
+    {
+      "id": "promotion",
+      "name": "Promoção",
+      "img": "/img-categoryies/pharmacy.png"
+    },
+    {
+      "id": "japonese",
+      "name": "Japonesa",
+      "img": "/img-categoryies/drinks.png"
+    }
+  ],
+
+  "start": [
+    {
+      "id": "restaunt",
+      "name": "Restaurante",
+      "img": "/img-categoryies/sandwich.png"
+    },
+    {
+      "id": "store",
+      "name": "Mercado",
+      "img": "/img-categoryies/store.png"
+    },
+    {
+      "id": "pharmacy",
+      "name": "Farmácia",
+      "img": "/img-categoryies/pharmacy.png"
+    },
+    {
+      "id": "drinks",
+      "name": "Bebidas",
+      "img": "/img-categoryies/drinks.png"
+    }
+  ]
+}

@@ -33,7 +33,7 @@
           <p>Buscas recentes</p>
           <li v-for="(item, index) in recentSearches" :key="index">
             <router-link :to="item.link">
-              <i class="bi bi-arrow-clockwise"></i> {{ item.label }}
+              <i class="bi bi-arrow-clockwise"></i> {{ item.name }}
             </router-link>
           </li>
         </ul>
@@ -43,20 +43,14 @@
 </template>
 
 <script>
+import { recentSearchesLinks } from "@/constants/recentSearches";
 export default {
   name: "InputSearchComponent",
   data() {
     return {
       searchItem: null,
       searchModal: false,
-      recentSearches: [
-        { label: "Início", link: "/" },
-        { label: "Restaurante", link: "/" },
-        { label: "Mercado", link: "/" },
-        { label: "Bebidas", link: "/drinks" },
-        { label: "Farmácia", link: "/" },
-        { label: "Shopping", link: "/" },
-      ],
+      recentSearches: recentSearchesLinks,
     };
   },
   methods: {
