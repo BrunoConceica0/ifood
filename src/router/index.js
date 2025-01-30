@@ -18,9 +18,20 @@ const routes = [
         component: () => import("@/views/Restaunt"),
       },
       {
+        path: "store",
+        component: () => import("@/views/Store"),
+        name: "store",
+      },
+      {
         path: "drinks",
         component: () => import("@/views/Drinks"),
         name: "bebidas",
+      },
+
+      {
+        path: "pharmacy",
+        component: () => import("@/views/Pharmacy"),
+        name: "pharmacy",
       },
     ],
   },

@@ -63,5 +63,61 @@
       "name": "Bebidas",
       "img": "/img-categoryies/drinks.png"
     }
+  ],
+
+  "market": [
+    {
+      "id": "fashDelivery",
+      "name": "Entraga Rápida",
+      "img": "/img-categoryies/sandwich.png"
+    },
+    {
+      "id": "fashDelivery",
+      "name": "Compras Rápida",
+      "img": "/img-categoryies/sandwich.png"
+    },
+    {
+      "id": "promotion",
+      "name": "Promoção",
+      "img": "/img-categoryies/pharmacy.png"
+    },
+    {
+      "id": "japonese",
+      "name": "Japonesa",
+      "img": "/img-categoryies/drinks.png"
+    },
+    {
+      "id": "sandwich",
+      "name": "Lanche",
+      "img": "/img-categoryies/sandwich.png"
+    },
+    {
+      "id": "pizza",
+      "name": "Pizza",
+      "img": "/img-categoryies/store.png"
+    }
+  ],
+
+  "pharmacy": [
+    {
+      "id": "fashDelivery",
+      "name": "Entraga Rápida",
+      "img": "/img-categoryies/sandwich.png"
+    },
+    {
+      "id": "offerWeek",
+      "name": "Ofertas da Semana",
+      "img": "/img-categoryies/store.png"
+    },
+    {
+      "id": "remedy",
+      "name": "Remédios",
+      "img": "/img-categoryies/pharmacy.png"
+    },
+    {
+      "id": "momSon",
+      "name": "Mamãe e Bebê",
+      "img": "/img-categoryies/pharmacy.png"
+    }
   ]
 }

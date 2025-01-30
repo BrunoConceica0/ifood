@@ -42,7 +42,7 @@ export default {
   },
   methods: {
     async fetchCategory() {
-      const categoryId = this.$route.params.categoryId || "restaurant";
+      const categoryId = this.$route.params.categoryId || "pharmacy";
       this.categories = await getCategories(categoryId);
     },
   },
