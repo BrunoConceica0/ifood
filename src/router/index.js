@@ -14,8 +14,8 @@ const routes = [
         component: () => import("@/components/StartComponents/Start"),
       },
       {
-        path: "restaunt",
-        component: () => import("@/views/Restaunt"),
+        path: "restaurant",
+        component: () => import("@/views/Restaurant"),
       },
       {
         path: "store",
@@ -25,7 +25,12 @@ const routes = [
       {
         path: "drinks",
         component: () => import("@/views/Drinks"),
-        name: "bebidas",
+        name: "Bebidas",
+      },
+      {
+        path: "shopping",
+        component: () => import("@/views/Shopping"),
+        name: "Shopping",
       },
 
       {

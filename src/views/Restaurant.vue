@@ -50,7 +50,7 @@ export default {
     async fetchProdut() {
       this.isLoading = true;
       try {
-        const categoryItem = this.$route.params.item || "pharmacy";
+        const categoryItem = this.$route.params.item || "restaurant";
         const response = await getCategories(categoryItem);
 
         // Garante que categories seja sempre um array

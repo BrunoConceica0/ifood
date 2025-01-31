@@ -65,7 +65,7 @@
     }
   ],
 
-  "market": [
+  "store": [
     {
       "id": "fashDelivery",
       "name": "Entraga Rápida",
@@ -98,6 +98,43 @@
     }
   ],
 
+  "drinks": [
+    {
+      "id": "fashDelivery",
+      "name": "Entraga Rápida",
+      "img": "/img-categoryies/sandwich.png"
+    },
+    {
+      "id": "ColdDrinks",
+      "name": "Bebidas geladas",
+      "img": "/img-categoryies/store.png"
+    },
+    {
+      "id": "Beer",
+      "name": "Cerveja",
+      "img": "/img-categoryies/pharmacy.png"
+    },
+    {
+      "id": "Spirits",
+      "name": "Destilados",
+      "img": "/img-categoryies/pharmacy.png"
+    },
+    {
+      "id": "Non-alcoholic",
+      "name": "Não alcoólicas",
+      "img": "/img-categoryies/pharmacy.png"
+    },
+    {
+      "id": "SnacksAndOthers",
+      "name": "Snacks e Outros",
+      "img": "/img-categoryies/pharmacy.png"
+    },
+    {
+      "id": "ChampionOffers",
+      "name": "Ofertas Campeãs",
+      "img": "/img-categoryies/pharmacy.png"
+    }
+  ],
   "pharmacy": [
     {
       "id": "fashDelivery",
@@ -118,6 +155,18 @@
       "id": "momSon",
       "name": "Mamãe e Bebê",
       "img": "/img-categoryies/pharmacy.png"
+    }
+  ],
+  "shopping": [
+    {
+      "id": "fashDelivery",
+      "name": "Entraga Rápida",
+      "img": "/img-categoryies/sandwich.png"
+    },
+    {
+      "id": "HomeDecor",
+      "name": "Casa e decor",
+      "img": "/img-categoryies/store.png"
     }
   ]
 }
