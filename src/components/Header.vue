@@ -7,15 +7,15 @@
       <nav class="header-nav" aria-label="Navegação Principal">
         <ul class="header-nav__list">
           <li
-            v-for="({ name, link }, index) in navigation"
+            v-for="({ name, path }, index) in navigation"
             :key="index"
             @click="setActive(index)"
             :class="{ active: activeIndex === index }"
           >
             <router-link
-              :to="link"
-              :class="{ active: $route.path === link }"
-              aria-current="$route.path === link ? 'page' : null"
+              :to="{ path: path }"
+              :class="{ active: $route.path === path }"
+              aria-current="page"
             >
               {{ name }}
             </router-link>
@@ -23,13 +23,23 @@
         </ul>
       </nav>
     </article>
-    <InputSearch />
+
+    <div class="search-container">
+      <input
+        type="text"
+        v-model="searchQuery"
+        @keyup.enter="search"
+        placeholder="Buscar..."
+        class="search-input"
+      />
+      <button @click="search" class="search-button">🔍</button>
+    </div>
+
     <HeaderStore />
   </header>
 </template>
 
 <script>
-import InputSearch from "@/components/HeaderComponents/InputSearch";
 import HeaderStore from "@/components/HeaderComponents/HeaderStore";
 import { navigationLinks } from "@/constants/navigationLinks";
 
@@ -38,13 +48,19 @@ export default {
   data() {
     return {
       navigation: navigationLinks,
-      activeIndex: null, // Índice do item ativo
+      activeIndex: null,
+      searchQuery: "", // Estado da barra de pesquisa
     };
   },
-  components: { InputSearch, HeaderStore },
+  components: { HeaderStore },
   methods: {
     setActive(index) {
       this.activeIndex = index;
+    },
+    search() {
+      if (this.searchQuery.trim()) {
+        this.$router.push({ path: "/", query: { q: this.searchQuery } });
+      }
     },
   },
 };

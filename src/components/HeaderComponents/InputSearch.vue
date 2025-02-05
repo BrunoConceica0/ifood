@@ -1,18 +1,15 @@
 <template>
   <section>
-    <form
-      action="#"
-      class="search-input__field"
-      @submit.prevent
-      @click="closeModal"
-    >
-      <div @click="fieldReachtRecent">
+    <form class="search-input__field" @submit.prevent="getSearch">
+      <div>
         <input
           class="search-field"
           type="text"
           v-model="searchItem"
           placeholder="Busque por item ou loja"
           aria-label="Campo de busca por item ou loja"
+          @focus="searchModal = true"
+          @keydown.esc="searchModal = false"
         />
         <button
           class="search-btn"
@@ -26,7 +23,7 @@
       </div>
     </form>
 
-    <!-- Cobertura do modal -->
+    <!-- Modal de buscas recentes -->
     <div v-if="searchModal" class="search-modal-overlay" @click="closeModal">
       <section class="search-recent" @click.stop>
         <ul class="search-recent__field">
@@ -44,21 +41,25 @@
 
 <script>
 import { recentSearchesLinks } from "@/constants/recentSearches";
+
 export default {
   name: "InputSearchComponent",
   data() {
     return {
-      searchItem: null,
+      searchItem: "", // Agora começa como string vazia
       searchModal: false,
       recentSearches: recentSearchesLinks,
     };
   },
   methods: {
-    fieldReachtRecent() {
-      this.searchModal = true;
-    },
     closeModal({ target, currentTarget }) {
       if (target === currentTarget) {
+        this.searchModal = false;
+      }
+    },
+    getSearch() {
+      if (this.searchItem.trim() !== "") {
+        this.$router.push({ path: "/search", query: { q: this.searchItem } });
         this.searchModal = false;
       }
     },
