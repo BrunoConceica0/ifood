@@ -1,8 +1,7 @@
 export const navigationLinks = [
-  { name: "Início", link: "/start" },
-  { name: "Restaurante", link: "/restaurant" },
-  { name: "Mercado", link: "/store" },
-  { name: "Bebidas", link: "/drinks" },
-  { name: "Farmácia", link: "/pharmacy" },
-  { name: "Shopping", link: "/shopping" },
+  { name: "Início", path: "/start" },
+  { name: "Restaurantes", path: "/restaurant" },
+  { name: "Bebidas", path: "/drinks" },
+  { name: "Mercado", path: "/store" },
+  { name: "Farmácia", path: "/pharmacy" },
 ];

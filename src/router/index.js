@@ -10,36 +10,19 @@ const routes = [
     component: () => import("@/Ifood"),
     children: [
       {
-        path: "start",
-        component: () => import("@/components/StartComponents/Start"),
+        path: ":categoryPage",
+        component: () => import("@/views/CategoryPage"),
+        name: "categoryPage",
+        props: true,
       },
       {
-        path: "restaurant",
-        component: () => import("@/views/Restaurant"),
-      },
-      {
-        path: "store",
-        component: () => import("@/views/Store"),
-        name: "store",
-      },
-      {
-        path: "drinks",
-        component: () => import("@/views/Drinks"),
-        name: "Bebidas",
-      },
-      {
-        path: "shopping",
-        component: () => import("@/views/Shopping"),
-        name: "Shopping",
-      },
-
-      {
-        path: "pharmacy",
-        component: () => import("@/views/Pharmacy"),
-        name: "pharmacy",
+        path: "/search",
+        component: () => import("@/views/Search"),
+        nome: "search",
       },
     ],
   },
+
   {
     path: "/login",
     component: () => import("@/views/Login"),

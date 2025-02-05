@@ -10,7 +10,7 @@
 
 <script>
 import Header from "@/components/Header";
-import Footer from "@/components/Footer";
+import Footer from "@/views/Footer";
 export default {
   name: "IfoodApp",
   components: { Header, Footer },
