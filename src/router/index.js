@@ -15,12 +15,12 @@ const routes = [
         name: "categoryPage",
         props: true,
       },
-      {
-        path: "/search",
-        component: () => import("@/views/Search"),
-        nome: "search",
-      },
     ],
+  },
+  {
+    path: "/search",
+    component: () => import("@/views/Search"),
+    nome: "search",
   },
 
   {

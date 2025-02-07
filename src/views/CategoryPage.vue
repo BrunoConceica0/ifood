@@ -49,10 +49,10 @@ export default {
       let url = "";
 
       if (searchQuery) {
-        url = `http://localhost:3000/produtos?q=${searchQuery}`;
+        url = `http://localhost:3001/produtos?q=${searchQuery}`;
         this.title = `Resultados para "${searchQuery}"`;
       } else if (category) {
-        url = `http://localhost:3000/${category}`;
+        url = `http://localhost:3001/${category}`;
         this.title = `Categoria: ${category}`;
       } else {
         this.isLoading = false;

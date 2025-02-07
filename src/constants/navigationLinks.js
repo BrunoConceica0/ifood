@@ -4,4 +4,5 @@ export const navigationLinks = [
   { name: "Bebidas", path: "/drinks" },
   { name: "Mercado", path: "/store" },
   { name: "Farmácia", path: "/pharmacy" },
+  { name: "Shopping", path: "/shopping" },
 ];
