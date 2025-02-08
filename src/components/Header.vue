@@ -23,24 +23,14 @@
         </ul>
       </nav>
     </article>
-
-    <div class="search-container">
-      <input
-        type="text"
-        v-model="searchQuery"
-        @keyup.enter="search"
-        placeholder="Buscar..."
-        class="search-input"
-      />
-      <button @click="search" class="search-button">🔍</button>
-    </div>
-
+    <InputSearch />
     <HeaderStore />
   </header>
 </template>
 
 <script>
 import HeaderStore from "@/components/HeaderComponents/HeaderStore";
+import InputSearch from "@/components/HeaderComponents/InputSearch";
 import { navigationLinks } from "@/constants/navigationLinks";
 
 export default {
@@ -52,7 +42,7 @@ export default {
       searchQuery: "", // Estado da barra de pesquisa
     };
   },
-  components: { HeaderStore },
+  components: { HeaderStore, InputSearch },
   methods: {
     setActive(index) {
       this.activeIndex = index;
