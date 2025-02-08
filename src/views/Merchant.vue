@@ -6,26 +6,25 @@
     id="merchant-content"
   >
     <section>
-      <div class="">
+<div>
         <h2 aria-labelledby="title">Lojas</h2>
         <div class="flex-r">
           <ul class="flex-row">
-            <li class="" v-for="(store, index) in stores" :key="index">
+            <li v-for="(store, index) in categoryData" :key="index">
               <router-link to="#">
                 <div>
-                  <span
-                    >{{ store.store_name
-                    }}<i class="bi bi-star-fill" v-if="store.champion"></i
-                  ></span>
-                  <span
-                    ><i class="bi bi-star-fill"></i> {{ store.store_type }} |
-                    {{ store.distance_km }} km</span
-                  >
-                  <span
-                    >{{ store.delivery_time_min }} | Frete:{{
-                      store.delivery_fee
-                    }}</span
-                  >
+                  <span>
+                    {{ store.store_name }}
+                    <i class="bi bi-star-fill" v-if="store.champion"></i>
+                  </span>
+                  <span>
+                    <i class="bi bi-star-fill"></i> {{ store.store_type }} |
+                    {{ store.distance_km }} km
+                  </span>
+                  <span>
+                    {{ store.delivery_time_min }} min | Frete:
+                    {{ store.delivery_fee }}
+                  </span>
                 </div>
               </router-link>
             </li>
@@ -41,35 +40,56 @@ export default {
   name: "MerchantViews",
   data() {
     return {
-      stores: [],
+
+      stores: {}, // Objeto que armazena todas as categorias
+      categoryPage: "", // Categoria selecionada na URL
+      categoryData: [], // Armazena a lista filtrada da categoria
     };
   },
   methods: {
     async getStores() {
-      const url = "http://localhost:3002/start";
 
-      if (!url) console.log("URL not found");
+      const url = "http://localhost:3000/stores";
 
       try {
         const response = await fetch(url);
         const data = await response.json();
-        this.stores = data;
-        if (this.stores?.length === 0) {
-          console.log("No data found");
+
+
+        this.stores = data; // Armazena todas as categorias
+        this.filterCategoryData(); // Filtra os dados após o carregamento
+
+        if (!Object.keys(this.stores).length) {
+          console.log("Nenhuma loja encontrada");
         }
       } catch (error) {
-        console.log(error);
+        console.error("Erro ao carregar lojas:", error);
+      }
+    },
+    filterCategoryData() {
+      const category = this.categoryPage;
+
+      // Verifica se a categoria existe nos dados carregados
+      if (category && this.stores[category]) {
+        this.categoryData = this.stores[category]; // Define a categoria correta
+      } else {
+        this.categoryData = []; // Se a categoria não existe, define como array vazio
       }
     },
   },
   created() {
+
+    // Obtém a categoria da rota
+    this.categoryPage = this.$route.params.categoryPage;
+
+    // Carrega as lojas e filtra os dados
     this.getStores();
+  },
+  watch: {
+    "$route.params.categoryPage"(newCategory) {
+      this.categoryPage = newCategory;
+      this.filterCategoryData(); // Atualiza os dados ao mudar de categoria
+    },
   },
 };
 </script>
-
-<style>
-.teste {
-  color: black;
-}
-</style>

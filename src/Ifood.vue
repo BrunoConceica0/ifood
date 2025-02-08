@@ -12,7 +12,8 @@
 <script>
 import Header from "@/components/Header";
 import Footer from "@/views/Footer";
-import Merchant from "@/views/Merchant.vue";
+
+import Merchant from "./views/Merchant.vue";
 export default {
   name: "IfoodApp",
   components: { Header, Footer, Merchant },
