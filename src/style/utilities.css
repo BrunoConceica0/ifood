@@ -74,8 +74,11 @@
   grid-template-rows: repeat(2, 1fr);
 }
 /* animation */
+.hover-zoom-shadow li {
+  transition: all 0.3s ease-out;
+}
 .hover-zoom-shadow li:hover {
   transform: scale(1.1);
   box-shadow: 2px 1px 6px rgba(0, 0, 0, 0.1), -2px -1px 6px rgba(0, 0, 0, 0.1);
-  transition: 0.3s all;
+  transition: 0.3s ease-in-out;
 }

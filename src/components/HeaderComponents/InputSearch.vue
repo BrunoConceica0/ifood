@@ -59,7 +59,11 @@ export default {
     },
     getSearch() {
       if (this.searchItem.trim() !== "") {
-        this.$router.push({ path: "/search", query: { q: this.searchItem } });
+        this.$router.push({
+          path: "search",
+          name: "search",
+          query: { q: this.searchItem },
+        });
         this.searchModal = false;
       }
     },

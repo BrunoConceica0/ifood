@@ -1,7 +1,7 @@
 <template>
   <div class="search-home container-primary">
     <h3 class="search-home__title">
-      Buscando por
+      Buscando por 
       <span class="search-home__emphasis">{{ $route.query.q }}</span>
     </h3>
   </div>

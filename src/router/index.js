@@ -7,7 +7,7 @@ const routes = [
   {
     path: "/",
     name: "ifood",
-    component: () => import("@/Ifood"),
+    component: () => import("@/views/Home"),
     children: [
       {
         path: ":categoryPage",

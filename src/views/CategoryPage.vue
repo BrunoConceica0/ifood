@@ -1,19 +1,17 @@
 <template>
   <article aria-label="Página de Categoria" class="container-primary">
     <div>
-      {{ categoryData }}
+      <!-- {{ categoryData }} -->
       <h1 class="category_title">
         Pedir seu delivery no iFood é rápido e prático! Conheça as categorias
       </h1>
-      <div class="category__menu" v-if="categories.length">
+      <div class="category__menu" v-if="categoryData.length">
         <ul class="category__menu_list flex-row hover-zoom-shadow">
-          <li v-for="({ id, name, img }, index) in categoryData" :key="index">
+          <li v-for="({ name, img }, index) in categoryData" :key="index">
             <router-link :to="{ path: id }">
               <img class="category__menu__img" :src="img" :alt="name" />
 
-              <span class="category__menu__subtitle"
-                >{{ name }} categoria: {{ name }}
-              </span>
+              <span class="category__menu__subtitle">{{ name }} </span>
             </router-link>
           </li>
         </ul>
@@ -36,6 +34,7 @@ export default {
       categories: "",
       categoryData: [],
       categoryPage: "",
+      searchQuery: "",
       isLoading: true,
       title: "",
     };
@@ -48,21 +47,7 @@ export default {
       const category = this.$route.params.categoryPage;
       /* o route ocorre pq ele esta sendo usado o props:true no roteamento  path: ":categoryPage" */
 
-      // const searchQuery = this.$route.query.q;
-
-      let url = "http://localhost:3000/categories";
-
-      // if (searchQuery) {
-      //   this.url += `/?q=${searchQuery}`;
-      //   this.title = `Resultados para "${searchQuery}"`;
-      // } else if (category) {
-      //   url += `/${category}`;
-
-      //   this.title = `Categoria: ${category}`;
-      // } else {
-      //   this.isLoading = false;
-      //   return;
-      // }
+      let url = "http://localhost:3000/categories/";
 
       try {
         const response = await axios.get(url);
@@ -81,6 +66,8 @@ export default {
       const valueCategory = this.categoryPage;
       if (valueCategory && this.categories[valueCategory]) {
         this.categoryData = this.categories[valueCategory];
+      } else {
+        this.isLoading = false;
       }
     },
   },
@@ -101,3 +88,43 @@ export default {
   },
 };
 </script>
+<style scoped>
+.category_title {
+  font: var(--font-bp2);
+  color: var(--cor-text-primary);
+}
+.category__menu_list {
+  gap: 16px;
+  margin-top: 1rem;
+}
+.category__menu_list li {
+  padding: 0.8rem;
+  margin: 0.5rem 1.4rem;
+  border-radius: 8px;
+  text-align: center;
+  width: 11rem;
+  transition: 0.3s ease-out;
+}
+
+.category__menu__subtitle {
+  color: var(--cor-text-secondary);
+  font: var(--font-mp0);
+  display: inline;
+}
+.category__menu__img {
+  display: block;
+  width: 8rem;
+  height: 7rem;
+  border-radius: 4px;
+}
+/* loading */
+.category_loading {
+  gap: 6rem;
+}
+.category-loading__item {
+  background: var(--cor-feild-input);
+  border-radius: 4px;
+  width: 8rem;
+  height: 8rem;
+}
+</style>

@@ -8,7 +8,10 @@
         </button>
       </div>
       <div class="store-content__item">
-        <router-link :to="{ path: 'login' }" class="store-login">
+        <router-link
+          :to="{ path: '/login', name: 'login' }"
+          class="store-login"
+        >
           <i class="bi bi-box-arrow-in-right"></i>
         </router-link>
       </div>
