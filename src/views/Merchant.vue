@@ -6,13 +6,15 @@
     id="merchant-content"
   >
     <section>
-      <div class="cardstack-section-container">
-        <h2 aria-labelledby="title">Lojas</h2>
-        <div class="">
+      <div class="flex-row category_loading" v-if="isLoading">
+        <Loading class="category-loading__item" v-for="n in 6" :key="n" />
+      </div>
+      <div class="cardstack-section-container" v-else>
+        <div class="" v-if="stores.length">
           <ul class="merchant-list__wrapper hover-zoom-shadow">
             <li
               class="merchant-list__item"
-              v-for="(store, index) in categoryData"
+              v-for="(store, index) in stores"
               :key="index"
             >
               <router-link to="#">
@@ -39,71 +41,79 @@
             </li>
           </ul>
         </div>
+        <Pagination
+          :currentPage="pagination.currentPage"
+          :perPages="pagination.perPages"
+          :totalPages="pagination.totalPages"
+        />
+        <div>
+          <h2 aria-labelledby="title">Lojas {{ categoryPage }}</h2>
+        </div>
       </div>
     </section>
   </article>
 </template>
 
 <script>
+import Loading from "@/components/partial/loading";
+import Pagination from "@/components/partial/Pagination";
 export default {
+  components: { Loading, Pagination },
   name: "MerchantViews",
   data() {
     return {
-      stores: {}, // Objeto que armazena todas as categorias
+      stores: [], // Objeto que armazena todas as categorias
       categoryPage: "", // Categoria selecionada na URL
-      categoryData: [], // Armazena a lista filtrada da categoria
+      url: "http://localhost:3001",
+      limitPage: 15,
+      isLoading: true,
+      defaultImage: "/images/defaultImage.jpg", //Se a imagem não der resposta
+      pagination: {
+        currentPage: 1,
+        perPages: 15,
+        totalPages: 6,
+        totalItem: 0,
+      },
 
-      defaultImage: "/images/defaultImage.jpg",
+      productTotal: 0,
     };
   },
   methods: {
     async getStores() {
-      const url = "http://localhost:3000/stores";
-
+      // Ao deixar apenas um categoria funcionando, ela não consegue sair url que foi filtado e nção ativa a Loadiing, somente dando F5
+      this.isLoading = true;
       try {
-        const response = await fetch(url);
-        const data = await response.json();
+        const urlComplet = `${this.url}/${this.categoryPage}Stores?_page=${this.pagination.currentPage}&_limit=${this.pagination.perPages}`;
 
-        this.stores = data; // Armazena todas as categorias
-        this.filterCategoryData(); // Filtra os dados após o carregamento
+        const response = await fetch(urlComplet);
 
-        if (!Object.keys(this.stores).length) {
-          console.log("Nenhuma loja encontrada");
+        console.log(this.produtosTotal);
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
         }
+        const totalCount = response.headers.get("x-total-count");
+        this.totalItem = totalCount;
+        const data = await response.json();
+        console.log("Total de itens:", totalCount);
+        this.stores = data;
       } catch (error) {
-        console.error("Erro ao carregar lojas:", error);
+        console.log("url da lojas não esta funciomando", error);
+      } finally {
+        this.isLoading = false;
       }
     },
-    filterCategoryData() {
-      const category = this.categoryPage;
+  },
 
-      // Verifica se a categoria existe nos dados carregados
-      if (category && this.stores[category]) {
-        this.categoryData = this.stores[category]; // Define a categoria correta
-      } else {
-        this.categoryData = []; // Se a categoria não existe, define como array vazio
-      }
-    },
-  },
-  filters: {
-    numberInReal(valeu) {
-      return valeu.toLocaleString("pt-BR", {
-        style: "currency",
-        currency: "BRL",
-      });
-    },
-  },
   created() {
-    // Obtém a categoria da rota
-    this.categoryPage = this.$route.params.categoryPage;
-
-    // Carrega as lojas e filtra os dados
     this.getStores();
+    this.categoryPage = this.$route.params.categoryPage;
   },
   watch: {
     "$route.params.categoryPage"(newCategory) {
       this.categoryPage = newCategory;
-      this.filterCategoryData(); // Atualiza os dados ao mudar de categoria
+
+      this.getStores();
+      this.isLoading = true;
     },
   },
 };
@@ -114,7 +124,7 @@ export default {
 }
 .merchant-list__wrapper {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: repeat(5, 1fr);
   gap: 4rem;
 }
 .teste {

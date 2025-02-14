@@ -1,0 +1,667 @@
+{
+  "restaurant": [
+    {
+      "id": "sandwich",
+      "name": "Lanche",
+      "img": "/img-categories/sandwich.png"
+    },
+    {
+      "id": "pizza",
+      "name": "Pizza",
+      "img": "/img-categories/pizza.png"
+    },
+    {
+      "id": "promotion",
+      "name": "Promoção",
+      "img": "/img-categories/promotion.png"
+    },
+    {
+      "id": "japanese",
+      "name": "Japonesa",
+      "img": "/img-categories/japanese.png"
+    }
+  ],
+  "start": [
+    {
+      "id": "restaurant",
+      "name": "Restaurante",
+      "img": "/img-categories/restaurant.png"
+    },
+    {
+      "id": "store",
+      "name": "Mercado",
+      "img": "/img-categories/store.png"
+    },
+    {
+      "id": "pharmacy",
+      "name": "Farmácia",
+      "img": "/img-categories/pharmacy.png"
+    },
+    {
+      "id": "drinks",
+      "name": "Bebidas",
+      "img": "/img-categories/drinks.png"
+    }
+  ],
+  "store": [
+    {
+      "id": "fastDelivery",
+      "name": "Entrega Rápida",
+      "img": "/img-categories/fast-delivery.png"
+    },
+    {
+      "id": "promotion",
+      "name": "Promoção",
+      "img": "/img-categories/promotion.png"
+    }
+  ],
+  "drinks": [
+    {
+      "id": "coldDrinks",
+      "name": "Bebidas Geladas",
+      "img": "/img-categories/cold-drinks.png"
+    },
+    {
+      "id": "beer",
+      "name": "Cerveja",
+      "img": "/img-categories/beer.png"
+    },
+    {
+      "id": "spirits",
+      "name": "Destilados",
+      "img": "/img-categories/spirits.png"
+    },
+    {
+      "id": "nonAlcoholic",
+      "name": "Não Alcoólicas",
+      "img": "/img-categories/non-alcoholic.png"
+    },
+    {
+      "id": "snacksAndOthers",
+      "name": "Snacks e Outros",
+      "img": "/img-categories/snacks.png"
+    },
+    {
+      "id": "championOffers",
+      "name": "Ofertas Campeãs",
+      "img": "/img-categories/champion-offers.png"
+    }
+  ],
+  "pharmacy": [
+    {
+      "id": "fastDelivery",
+      "name": "Entrega Rápida",
+      "img": "/img-categories/fast-delivery.png"
+    },
+    {
+      "id": "offerWeek",
+      "name": "Ofertas da Semana",
+      "img": "/img-categories/offer-week.png"
+    },
+    {
+      "id": "remedy",
+      "name": "Remédios",
+      "img": "/img-categories/remedy.png"
+    },
+    {
+      "id": "momSon",
+      "name": "Mamãe e Bebê",
+      "img": "/img-categories/mom-son.png"
+    }
+  ],
+  "shopping": [
+    {
+      "id": "fastDelivery",
+      "name": "Entrega Rápida",
+      "img": "/img-categories/fast-delivery.png"
+    },
+    {
+      "id": "homeDecor",
+      "name": "Casa e Decoração",
+      "img": "/img-categories/home-decor.png"
+    }
+  ],
+
+  "startStores": [
+    {
+      "store_name": "Açaí do João",
+      "rating": 4.2,
+      "champion": false,
+      "store_type": "açaí",
+      "distance_km": 2.5,
+      "delivery_time_min": 30,
+      "delivery_fee": 0
+    },
+    {
+      "store_name": "Lanches da Maria",
+      "rating": 4.8,
+      "champion": true,
+      "store_type": "burger",
+      "distance_km": 1.2,
+      "delivery_time_min": 20,
+      "delivery_fee": 5.0
+    },
+    {
+      "store_name": "Pizzaria Bella",
+      "rating": 3.6,
+      "champion": false,
+      "store_type": "pizza",
+      "distance_km": 3.0,
+      "delivery_time_min": 40,
+      "delivery_fee": 0
+    },
+    {
+      "store_name": "Açaí da Vitória",
+      "rating": 4.7,
+      "champion": true,
+      "store_type": "açaí",
+      "distance_km": 2.0,
+      "delivery_time_min": 35,
+      "delivery_fee": 0
+    },
+    {
+      "store_name": "Lanches do Zé",
+      "rating": 2.9,
+      "champion": false,
+      "store_type": "burger",
+      "distance_km": 1.5,
+      "delivery_time_min": 25,
+      "delivery_fee": 4.5
+    },
+    {
+      "store_name": "Pizza Hot",
+      "rating": 5.0,
+      "champion": true,
+      "store_type": "pizza",
+      "distance_km": 3.5,
+      "delivery_time_min": 50,
+      "delivery_fee": 0
+    },
+    {
+      "store_name": "Açaí da Lú",
+      "rating": 3.3,
+      "champion": false,
+      "store_type": "açaí",
+      "distance_km": 2.8,
+      "delivery_time_min": 28,
+      "delivery_fee": 0
+    },
+    {
+      "store_name": "Lanches da Ana",
+      "rating": 4.1,
+      "champion": true,
+      "store_type": "burger",
+      "distance_km": 2.2,
+      "delivery_time_min": 22,
+      "delivery_fee": 3.0
+    },
+    {
+      "store_name": "Pizzaria do Mário",
+      "rating": 4.4,
+      "champion": false,
+      "store_type": "pizza",
+      "distance_km": 4.0,
+      "delivery_time_min": 45,
+      "delivery_fee": 6.0
+    },
+    {
+      "store_name": "Açaí do Jorge",
+      "rating": 2.5,
+      "champion": false,
+      "store_type": "açaí",
+      "distance_km": 1.8,
+      "delivery_time_min": 18,
+      "delivery_fee": 4.0
+    },
+    {
+      "store_name": "Açaí do João",
+      "rating": 4.2,
+      "champion": false,
+      "store_type": "açaí",
+      "distance_km": 2.5,
+      "delivery_time_min": 30,
+      "delivery_fee": 0
+    },
+    {
+      "store_name": "Lanches da Maria",
+      "rating": 4.8,
+      "champion": true,
+      "store_type": "burger",
+      "distance_km": 1.2,
+      "delivery_time_min": 20,
+      "delivery_fee": 5.0
+    },
+    {
+      "store_name": "Pizzaria Bella",
+      "rating": 3.6,
+      "champion": false,
+      "store_type": "pizza",
+      "distance_km": 3.0,
+      "delivery_time_min": 40,
+      "delivery_fee": 0
+    },
+    {
+      "store_name": "Açaí da Vitória",
+      "rating": 4.7,
+      "champion": true,
+      "store_type": "açaí",
+      "distance_km": 2.0,
+      "delivery_time_min": 35,
+      "delivery_fee": 0
+    },
+    {
+      "store_name": "Lanches do Zé",
+      "rating": 2.9,
+      "champion": false,
+      "store_type": "burger",
+      "distance_km": 1.5,
+      "delivery_time_min": 25,
+      "delivery_fee": 4.5
+    },
+    {
+      "store_name": "Pizza Hot",
+      "rating": 5.0,
+      "champion": true,
+      "store_type": "pizza",
+      "distance_km": 3.5,
+      "delivery_time_min": 50,
+      "delivery_fee": 0
+    },
+    {
+      "store_name": "Açaí da Lú",
+      "rating": 3.3,
+      "champion": false,
+      "store_type": "açaí",
+      "distance_km": 2.8,
+      "delivery_time_min": 28,
+      "delivery_fee": 0
+    },
+    {
+      "store_name": "Lanches da Ana",
+      "rating": 4.1,
+      "champion": true,
+      "store_type": "burger",
+      "distance_km": 2.2,
+      "delivery_time_min": 22,
+      "delivery_fee": 3.0
+    },
+    {
+      "store_name": "Pizzaria do Mário",
+      "rating": 4.4,
+      "champion": false,
+      "store_type": "pizza",
+      "distance_km": 4.0,
+      "delivery_time_min": 45,
+      "delivery_fee": 6.0
+    },
+    {
+      "store_name": "Açaí do Jorge",
+      "rating": 2.5,
+      "champion": false,
+      "store_type": "açaí",
+      "distance_km": 1.8,
+      "delivery_time_min": 18,
+      "delivery_fee": 4.0
+    },
+    {
+      "store_name": "Açaí do João",
+      "rating": 4.2,
+      "champion": false,
+      "store_type": "açaí",
+      "distance_km": 2.5,
+      "delivery_time_min": 30,
+      "delivery_fee": 0
+    },
+    {
+      "store_name": "Lanches da Maria",
+      "rating": 4.8,
+      "champion": true,
+      "store_type": "burger",
+      "distance_km": 1.2,
+      "delivery_time_min": 20,
+      "delivery_fee": 5.0
+    },
+    {
+      "store_name": "Pizzaria Bella",
+      "rating": 3.6,
+      "champion": false,
+      "store_type": "pizza",
+      "distance_km": 3.0,
+      "delivery_time_min": 40,
+      "delivery_fee": 0
+    },
+    {
+      "store_name": "Açaí da Vitória",
+      "rating": 4.7,
+      "champion": true,
+      "store_type": "açaí",
+      "distance_km": 2.0,
+      "delivery_time_min": 35,
+      "delivery_fee": 0
+    },
+    {
+      "store_name": "Lanches do Zé",
+      "rating": 2.9,
+      "champion": false,
+      "store_type": "burger",
+      "distance_km": 1.5,
+      "delivery_time_min": 25,
+      "delivery_fee": 4.5
+    },
+    {
+      "store_name": "Pizza Hot",
+      "rating": 5.0,
+      "champion": true,
+      "store_type": "pizza",
+      "distance_km": 3.5,
+      "delivery_time_min": 50,
+      "delivery_fee": 0
+    },
+    {
+      "store_name": "Açaí da Lú",
+      "rating": 3.3,
+      "champion": false,
+      "store_type": "açaí",
+      "distance_km": 2.8,
+      "delivery_time_min": 28,
+      "delivery_fee": 0
+    },
+    {
+      "store_name": "Lanches da Ana",
+      "rating": 4.1,
+      "champion": true,
+      "store_type": "burger",
+      "distance_km": 2.2,
+      "delivery_time_min": 22,
+      "delivery_fee": 3.0
+    },
+    {
+      "store_name": "Pizzaria do Mário",
+      "rating": 4.4,
+      "champion": false,
+      "store_type": "pizza",
+      "distance_km": 4.0,
+      "delivery_time_min": 45,
+      "delivery_fee": 6.0
+    },
+    {
+      "store_name": "Açaí do Jorge",
+      "rating": 2.5,
+      "champion": false,
+      "store_type": "açaí",
+      "distance_km": 1.8,
+      "delivery_time_min": 18,
+      "delivery_fee": 4.0
+    },
+    {
+      "store_name": "Açaí do João",
+      "rating": 4.2,
+      "champion": false,
+      "store_type": "açaí",
+      "distance_km": 2.5,
+      "delivery_time_min": 30,
+      "delivery_fee": 0
+    },
+    {
+      "store_name": "Lanches da Maria",
+      "rating": 4.8,
+      "champion": true,
+      "store_type": "burger",
+      "distance_km": 1.2,
+      "delivery_time_min": 20,
+      "delivery_fee": 5.0
+    },
+    {
+      "store_name": "Pizzaria Bella",
+      "rating": 3.6,
+      "champion": false,
+      "store_type": "pizza",
+      "distance_km": 3.0,
+      "delivery_time_min": 40,
+      "delivery_fee": 0
+    },
+    {
+      "store_name": "Açaí da Vitória",
+      "rating": 4.7,
+      "champion": true,
+      "store_type": "açaí",
+      "distance_km": 2.0,
+      "delivery_time_min": 35,
+      "delivery_fee": 0
+    },
+    {
+      "store_name": "Lanches do Zé",
+      "rating": 2.9,
+      "champion": false,
+      "store_type": "burger",
+      "distance_km": 1.5,
+      "delivery_time_min": 25,
+      "delivery_fee": 4.5
+    },
+    {
+      "store_name": "Pizza Hot",
+      "rating": 5.0,
+      "champion": true,
+      "store_type": "pizza",
+      "distance_km": 3.5,
+      "delivery_time_min": 50,
+      "delivery_fee": 0
+    },
+    {
+      "store_name": "Açaí da Lú",
+      "rating": 3.3,
+      "champion": false,
+      "store_type": "açaí",
+      "distance_km": 2.8,
+      "delivery_time_min": 28,
+      "delivery_fee": 0
+    },
+    {
+      "store_name": "Lanches da Ana",
+      "rating": 4.1,
+      "champion": true,
+      "store_type": "burger",
+      "distance_km": 2.2,
+      "delivery_time_min": 22,
+      "delivery_fee": 3.0
+    },
+    {
+      "store_name": "Pizzaria do Mário",
+      "rating": 4.4,
+      "champion": false,
+      "store_type": "pizza",
+      "distance_km": 4.0,
+      "delivery_time_min": 45,
+      "delivery_fee": 6.0
+    },
+    {
+      "store_name": "Açaí do Jorge",
+      "rating": 2.5,
+      "champion": false,
+      "store_type": "açaí",
+      "distance_km": 1.8,
+      "delivery_time_min": 18,
+      "delivery_fee": 4.0
+    },
+    {
+      "store_name": "Açaí do João",
+      "rating": 4.2,
+      "champion": false,
+      "store_type": "açaí",
+      "distance_km": 2.5,
+      "delivery_time_min": 30,
+      "delivery_fee": 0
+    },
+    {
+      "store_name": "Lanches da Maria",
+      "rating": 4.8,
+      "champion": true,
+      "store_type": "burger",
+      "distance_km": 1.2,
+      "delivery_time_min": 20,
+      "delivery_fee": 5.0
+    },
+    {
+      "store_name": "Pizzaria Bella",
+      "rating": 3.6,
+      "champion": false,
+      "store_type": "pizza",
+      "distance_km": 3.0,
+      "delivery_time_min": 40,
+      "delivery_fee": 0
+    },
+    {
+      "store_name": "Açaí da Vitória",
+      "rating": 4.7,
+      "champion": true,
+      "store_type": "açaí",
+      "distance_km": 2.0,
+      "delivery_time_min": 35,
+      "delivery_fee": 0
+    },
+    {
+      "store_name": "Lanches do Zé",
+      "rating": 2.9,
+      "champion": false,
+      "store_type": "burger",
+      "distance_km": 1.5,
+      "delivery_time_min": 25,
+      "delivery_fee": 4.5
+    },
+    {
+      "store_name": "Pizza Hot",
+      "rating": 5.0,
+      "champion": true,
+      "store_type": "pizza",
+      "distance_km": 3.5,
+      "delivery_time_min": 50,
+      "delivery_fee": 0
+    },
+    {
+      "store_name": "Açaí da Lú",
+      "rating": 3.3,
+      "champion": false,
+      "store_type": "açaí",
+      "distance_km": 2.8,
+      "delivery_time_min": 28,
+      "delivery_fee": 0
+    },
+    {
+      "store_name": "Lanches da Ana",
+      "rating": 4.1,
+      "champion": true,
+      "store_type": "burger",
+      "distance_km": 2.2,
+      "delivery_time_min": 22,
+      "delivery_fee": 3.0
+    },
+    {
+      "store_name": "Pizzaria do Mário",
+      "rating": 4.4,
+      "champion": false,
+      "store_type": "pizza",
+      "distance_km": 4.0,
+      "delivery_time_min": 45,
+      "delivery_fee": 6.0
+    },
+    {
+      "store_name": "Açaí do Jorge",
+      "rating": 2.5,
+      "champion": false,
+      "store_type": "açaí",
+      "distance_km": 1.8,
+      "delivery_time_min": 18,
+      "delivery_fee": 4.0
+    },
+    {
+      "store_name": "Açaí do João",
+      "rating": 4.2,
+      "champion": false,
+      "store_type": "açaí",
+      "distance_km": 2.5,
+      "delivery_time_min": 30,
+      "delivery_fee": 0
+    },
+    {
+      "store_name": "Lanches da Maria",
+      "rating": 4.8,
+      "champion": true,
+      "store_type": "burger",
+      "distance_km": 1.2,
+      "delivery_time_min": 20,
+      "delivery_fee": 5.0
+    },
+    {
+      "store_name": "Pizzaria Bella",
+      "rating": 3.6,
+      "champion": false,
+      "store_type": "pizza",
+      "distance_km": 3.0,
+      "delivery_time_min": 40,
+      "delivery_fee": 0
+    },
+    {
+      "store_name": "Açaí da Vitória",
+      "rating": 4.7,
+      "champion": true,
+      "store_type": "açaí",
+      "distance_km": 2.0,
+      "delivery_time_min": 35,
+      "delivery_fee": 0
+    },
+    {
+      "store_name": "Lanches do Zé",
+      "rating": 2.9,
+      "champion": false,
+      "store_type": "burger",
+      "distance_km": 1.5,
+      "delivery_time_min": 25,
+      "delivery_fee": 4.5
+    },
+    {
+      "store_name": "Pizza Hot",
+      "rating": 5.0,
+      "champion": true,
+      "store_type": "pizza",
+      "distance_km": 3.5,
+      "delivery_time_min": 50,
+      "delivery_fee": 0
+    },
+    {
+      "store_name": "Açaí da Lú",
+      "rating": 3.3,
+      "champion": false,
+      "store_type": "açaí",
+      "distance_km": 2.8,
+      "delivery_time_min": 28,
+      "delivery_fee": 0
+    },
+    {
+      "store_name": "Lanches da Ana",
+      "rating": 4.1,
+      "champion": true,
+      "store_type": "burger",
+      "distance_km": 2.2,
+      "delivery_time_min": 22,
+      "delivery_fee": 3.0
+    },
+    {
+      "store_name": "Pizzaria do Mário",
+      "rating": 4.4,
+      "champion": false,
+      "store_type": "pizza",
+      "distance_km": 4.0,
+      "delivery_time_min": 45,
+      "delivery_fee": 6.0
+    },
+    {
+      "store_name": "Açaí do Jorge",
+      "rating": 2.5,
+      "champion": false,
+      "store_type": "açaí",
+      "distance_km": 1.8,
+      "delivery_time_min": 18,
+      "delivery_fee": 4.0
+    }
+  ]
+}

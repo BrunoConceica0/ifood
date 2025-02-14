@@ -2,3 +2,6 @@
 @import url("./global.css");
 @import url("./tipografia.css");
 @import url("./cores.css");
+
+/* partial */
+@import url("./partial/loading.css");

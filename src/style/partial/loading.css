@@ -1,0 +1,10 @@
+/* loading */
+.category_loading {
+  gap: 6rem;
+}
+.category-loading__item {
+  background: var(--cor-feild-input);
+  border-radius: 4px;
+  width: 8rem;
+  height: 8rem;
+}
