@@ -41,13 +41,22 @@
             </li>
           </ul>
         </div>
-        <Pagination
-          :currentPage="pagination.currentPage"
-          :perPages="pagination.perPages"
-          :totalPages="pagination.totalPages"
-        />
+
         <div>
-          <h2 aria-labelledby="title">Lojas {{ categoryPage }}</h2>
+          <h2 aria-labelledby="title">Lojas</h2>
+        </div>
+        <!-- <div>
+          <ul>
+            <li v-for="page in pageTotal" :key="page">
+              <button @click="changePage(page)">{{ page }}</button>
+            </li>
+          </ul>
+        </div> -->
+        <div class="merchant__btn" @click.prevent="addItemsMerchant">
+          <button v-if="!isMaxItemsMerchant" :disabled="isMaxItemsMerchant">
+            Ver mais
+          </button>
+          <Loading v-else class="merchant__btn__loading" />
         </div>
       </div>
     </section>
@@ -55,10 +64,9 @@
 </template>
 
 <script>
-import Loading from "@/components/partial/loading";
-import Pagination from "@/components/partial/Pagination";
+import Loading from "@/components/partial/loading.vue";
 export default {
-  components: { Loading, Pagination },
+  components: { Loading },
   name: "MerchantViews",
   data() {
     return {
@@ -78,29 +86,75 @@ export default {
       productTotal: 0,
     };
   },
+  filters: {
+    numberInReal(value) {
+      if (!isNaN(value)) {
+        return value.toLocaleString("pt-br", {
+          style: "currency",
+          currency: "BRL",
+        });
+      } else {
+        return "";
+      }
+    },
+  },
   methods: {
     async getStores() {
       // Ao deixar apenas um categoria funcionando, ela não consegue sair url que foi filtado e nção ativa a Loadiing, somente dando F5
       this.isLoading = true;
+      if (this.categoryPage === "") {
+        this.categoryPage = "start";
+      } else {
+        console.log("Erro na categoryPage");
+      }
       try {
         const urlComplet = `${this.url}/${this.categoryPage}Stores?_page=${this.pagination.currentPage}&_limit=${this.pagination.perPages}`;
 
         const response = await fetch(urlComplet);
+        console.log(urlComplet);
 
-        console.log(this.produtosTotal);
         if (!response.ok) {
           throw new Error("Network response was not ok");
         }
         const totalCount = response.headers.get("x-total-count");
-        this.totalItem = totalCount;
+
+        this.pagination.totalItem = Number(totalCount);
+        if (this.totalItem <= 0) {
+          console.log("O totalItem esta vazio ");
+        }
         const data = await response.json();
-        console.log("Total de itens:", totalCount);
+
         this.stores = data;
       } catch (error) {
         console.log("url da lojas não esta funciomando", error);
       } finally {
         this.isLoading = false;
       }
+    },
+    changePage(index) {
+      if (this.pagination.currentPage !== index) {
+        this.pagination.currentPage = index;
+      } else {
+        this.pagination.currentPage = 1;
+      }
+    },
+    addItemsMerchant() {
+      if (this.pagination.perPages <= this.pagination.totalItem) {
+        this.pagination.perPages += 15;
+      }
+    },
+  },
+  computed: {
+    pageTotal() {
+      const total = this.pagination.totalItem / this.pagination.perPages;
+      // console.log(Number(total));
+      return total !== Infinity ? Math.ceil(total) : 0;
+    },
+    isMaxItemsMerchant() {
+      if (this.pagination.perPages >= this.pagination.totalItem) {
+        return true;
+      }
+      return false;
     },
   },
 
@@ -115,8 +169,26 @@ export default {
       this.getStores();
       this.isLoading = true;
     },
+    "pagination.currentPage"(newPage) {
+      this.getStores(newPage);
+    },
+    "pagination.perPages"(newPage) {
+      this.getStores(newPage);
+    },
+    "pagination.totalItem"(newItem) {
+      this.getStores(newItem);
+    },
   },
 };
+// Como fazer paginação interna do site:
+/*
+1- Tem que obter quantidades de item na lista na data:arrary da resposta da requisição de headers, nos headers tem informação extras do fetch do servidor, nele tem o "x-total-count"
+2- pegando a API com a resposta do fetch, creie um variante como const totalCount = response.headers.get("x-total-count");, ele vai returnar a quantidade de itens.
+3 - Sabendo da quantidade, sendo mais efiente, na criaão de paginação, user um metodo computed props para pode dividir o totalItens com com a quantidade de item que foi denominado. 60item / 15 item por pagina, para não ter números quebrados use o metodo Math.ceil(total)   return total !== Infinity ? Math.ceil(total) : 0;
+4 - crei um função methods para o número da pagina e incluir na url internar, changePage
+5 - Atualizar a dinamica dos dados recibidos ao clicar'"pagination.currentPage"(newPage) {this.getStores(newPage);'
+    },
+*/
 </script>
 <style scoped>
 .merchandise_container {
@@ -148,5 +220,31 @@ export default {
 }
 .merchant_subtitle-free {
   color: var(--cor-free);
+}
+.merchant__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--cor-feild-input-border);
+  border-radius: 4px;
+  text-align: center;
+  cursor: pointer;
+  color: var(--cor-text-primary);
+  margin-top: 5rem;
+}
+.merchant__btn button {
+  background: transparent;
+  border: none;
+  padding: 1.5rem;
+  widows: 100%;
+}
+.merchant__btn:hover {
+  background: var(--color-ifood);
+}
+.merchant__btn:active {
+  opacity: 0.7;
+}
+.merchant__btn__loading {
+  padding: 1.5rem;
 }
 </style>

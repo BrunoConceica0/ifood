@@ -14,6 +14,12 @@ const routes = [
         component: () => import("@/views/CategoryPage"),
         name: "categoryPage",
         props: true,
+        children: [
+          {
+            path: ":categoryPage:id",
+            props: true,
+          },
+        ],
       },
     ],
   },

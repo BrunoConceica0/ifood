@@ -1,7 +1,10 @@
 <template>
   <div>
-    <p @click="nextPage">Por Pagination {{ currentPage }}</p>
-    <p>Por Pagination {{ totalPages }}</p>
+    <ul>
+      <li v-for="page in pageTotal" :key="page">
+        <router-link :to="{}">{{ page }}</router-link>
+      </li>
+    </ul>
   </div>
 </template>
 
@@ -18,12 +21,20 @@ export default {
       type: Number,
       default: 1,
     },
-  },
-  computed: {
-    nextPage() {
-      return this.currentPage + 1;
+    totalItem: {
+      type: Number,
+      default: 1,
+    },
+    urlCompletMerchant: {
+      type: String,
+      required: true,
+      default: "",
     },
   },
+  data() {
+    return {};
+  },
+  methods: {},
 };
 </script>
 

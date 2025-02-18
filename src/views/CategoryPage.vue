@@ -8,7 +8,12 @@
         <ul class="category__menu_list flex-row hover-zoom-shadow">
           <li v-for="({ name, img, id }, index) in categories" :key="index">
             <router-link :to="{ path: id }">
-              <img class="category__menu__img" :src="img" :alt="name" />
+              <img
+                class="category__menu__img"
+                v-if="img"
+                :src="img[0].src"
+                :alt="name"
+              />
               <span class="category__menu__subtitle">{{ name }} </span>
             </router-link>
           </li>
