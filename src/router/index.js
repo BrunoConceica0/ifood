@@ -10,16 +10,16 @@ const routes = [
     component: () => import("@/views/Home"),
     children: [
       {
-        path: ":categoryPage",
-        component: () => import("@/views/CategoryPage"),
+        path: ":categoriesPage",
+        component: () => import("@/views/CategoriesPage"),
+        name: "categoriesPage",
+        props: true,
+      },
+      {
+        path: "categoryPage/:id" /* = http://localhost:8080/categoryPage/pizza  :to="{name: 'categoryPage',params: {categoriesPage: $route.params.id,id: id,name: name,},}"*/,
         name: "categoryPage",
         props: true,
-        children: [
-          {
-            path: ":categoryPage:id",
-            props: true,
-          },
-        ],
+        component: () => import("@/views/CategoryPage"),
       },
     ],
   },

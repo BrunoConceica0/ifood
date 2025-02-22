@@ -663,5 +663,62 @@
       "delivery_time_min": 18,
       "delivery_fee": 4.0
     }
+  ],
+  "pizzaCategory": [
+    {
+      "id": "1",
+      "name": "Pizza Mania",
+      "rating": 4.8,
+      "champion": true,
+      "store_type": "pizza",
+      "distance_km": 0.8,
+      "delivery_time_min": 30,
+      "delivery_fee": 0,
+      "open": true
+    },
+    {
+      "id": "2",
+      "name": "Garbatella Pizzaria Borda Grátis",
+      "rating": 5,
+      "champion": true,
+      "store_type": "pizza",
+      "distance_km": 0.7,
+      "delivery_time_min": "80-90",
+      "delivery_fee": 0,
+      "open": true
+    },
+    {
+      "id": "1",
+      "name": "Pizza Mania",
+      "rating": 4.8,
+      "champion": true,
+      "store_type": "pizza",
+      "distance_km": 0.8,
+      "delivery_time_min": 30,
+      "delivery_fee": 0,
+      "open": true
+    },
+    {
+      "id": "3",
+      "name": "Pizzaria e Esfiharia California",
+      "rating": 4.8,
+      "champion": false,
+      "store_type": "pizza",
+      "distance_km": 2.7,
+      "delivery_time_min": "30-40",
+      "delivery_fee": 0,
+      "open": true
+    },
+    {
+      "id": "4",
+      "name": "Pizza em Casa",
+      "rating": 4.8,
+      "champion": true,
+      "store_type": "pizza",
+      "distance_km": 0.9,
+      "delivery_time_min": 30,
+      "delivery_fee": 0,
+      "open": false
+    }
   ]
 }

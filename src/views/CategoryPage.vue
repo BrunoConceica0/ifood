@@ -1,103 +1,40 @@
 <template>
-  <article aria-label="Página de Categoria" class="container-primary">
-    <div>
-      <h1 class="category_title">
-        Pedir seu delivery no iFood é rápido e prático! Conheça as categorias
-      </h1>
-      <div class="category__menu" v-if="categories">
-        <ul class="category__menu_list flex-row hover-zoom-shadow">
-          <li v-for="({ name, img, id }, index) in categories" :key="index">
-            <router-link :to="{ path: id }">
-              <img
-                class="category__menu__img"
-                v-if="img"
-                :src="img[0].src"
-                :alt="name"
-              />
-              <span class="category__menu__subtitle">{{ name }} </span>
-            </router-link>
-          </li>
-        </ul>
-      </div>
-    </div>
-    <div class="category_loading flex-row" v-if="isLoading">
-      <Loading class="category-loading__item" v-for="n in 6" :key="n" />
-    </div>
-  </article>
+  <div>
+    <h1>{{ $route.params.name }} {{ category }}</h1>
+  </div>
 </template>
 
 <script>
-import Loading from "@/components/partial/loading";
-
+import { api } from "@/axios/getCategories";
 export default {
   name: "CategoryPage",
   data() {
     return {
-      categories: [],
-      url: "http://localhost:3001",
-      categoryPage: "",
-      searchQuery: "",
-      isLoading: true,
-      title: "",
+      category: "",
+      name: "",
     };
   },
-  components: { Loading },
   methods: {
-    async fetchCategories() {
+    async getCategory() {
       try {
-        const urlComplet = `${this.url}/${this.categoryPage}`;
-        const response = await fetch(urlComplet);
-        const data = await response.json();
-        this.categories = data;
-      } catch (error) {
-        console.log(error, "url não responde ");
+        const response = await api.get(`/${this.$route.params.id}Category`);
+        console.log(response.data);
+        this.category = response.data;
+      } catch (err) {
+        console.log(`Erro no produto ${err}`);
       }
-      this.isLoading = false;
     },
   },
   created() {
-    this.categoryPage = this.$route.params.categoryPage;
-    this.fetchCategories();
+    this.category = this.$route.params.categoryPage;
+    this.getCategory();
   },
   watch: {
     "$route.params.categoryPage"(newCategory) {
-      this.categoryPage = newCategory;
-      this.fetchCategories();
+      this.category = newCategory;
     },
-  },
-  beforeCreate() {
-    this.isLoading = false;
   },
 };
 </script>
 
-<style scoped>
-.category_title {
-  font: var(--font-bp2);
-  color: var(--cor-text-primary);
-}
-.category__menu_list {
-  gap: 16px;
-  margin-top: 1rem;
-}
-.category__menu_list li {
-  padding: 0.8rem;
-  margin: 0.5rem 1.4rem;
-  border-radius: 8px;
-  text-align: center;
-  width: 11rem;
-  transition: 0.3s ease-out;
-}
-
-.category__menu__subtitle {
-  color: var(--cor-text-secondary);
-  font: var(--font-mp0);
-  display: inline;
-}
-.category__menu__img {
-  display: block;
-  width: 8rem;
-  height: 7rem;
-  border-radius: 4px;
-}
-</style>
+<style></style>

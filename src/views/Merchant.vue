@@ -65,14 +65,14 @@
 
 <script>
 import Loading from "@/components/partial/loading.vue";
+import { api } from "@/axios/getCategories";
 export default {
   components: { Loading },
   name: "MerchantViews",
   data() {
     return {
       stores: [], // Objeto que armazena todas as categorias
-      categoryPage: "", // Categoria selecionada na URL
-      url: "http://localhost:3001",
+      categoriesPage: "", // Categoria selecionada na URL
       limitPage: 15,
       isLoading: true,
       defaultImage: "/images/defaultImage.jpg", //Se a imagem não der resposta
@@ -102,29 +102,26 @@ export default {
     async getStores() {
       // Ao deixar apenas um categoria funcionando, ela não consegue sair url que foi filtado e nção ativa a Loadiing, somente dando F5
       this.isLoading = true;
-      if (this.categoryPage === "") {
-        this.categoryPage = "start";
+      if (this.categoriesPage === "") {
+        this.categoriesPage = "start";
       } else {
-        console.log("Erro na categoryPage");
+        console.log("Erro na categoriesPage");
       }
       try {
-        const urlComplet = `${this.url}/${this.categoryPage}Stores?_page=${this.pagination.currentPage}&_limit=${this.pagination.perPages}`;
+        const urlComplet = `/${this.categoriesPage}Stores?_page=${this.pagination.currentPage}&_limit=${this.pagination.perPages}`;
 
-        const response = await fetch(urlComplet);
-        console.log(urlComplet);
+        const response = await api.get(urlComplet);
+        this.stores = response.data;
 
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
         const totalCount = response.headers.get("x-total-count");
 
         this.pagination.totalItem = Number(totalCount);
         if (this.totalItem <= 0) {
           console.log("O totalItem esta vazio ");
         }
-        const data = await response.json();
-
-        this.stores = data;
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
       } catch (error) {
         console.log("url da lojas não esta funciomando", error);
       } finally {
@@ -160,11 +157,11 @@ export default {
 
   created() {
     this.getStores();
-    this.categoryPage = this.$route.params.categoryPage;
+    this.categoriesPage = this.$route.params.categoriesPage;
   },
   watch: {
-    "$route.params.categoryPage"(newCategory) {
-      this.categoryPage = newCategory;
+    "$route.params.categoriesPage"(newCategory) {
+      this.categoriesPage = newCategory;
 
       this.getStores();
       this.isLoading = true;

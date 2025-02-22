@@ -4,7 +4,6 @@
     <main id="main">
       <router-view />
     </main>
-    <Merchant />
     <Footer />
   </div>
 </template>
@@ -13,10 +12,9 @@
 import Header from "@/components/Header";
 import Footer from "@/views/Footer";
 
-import Merchant from "./Merchant.vue";
 export default {
   name: "IfoodApp",
-  components: { Header, Footer, Merchant },
+  components: { Header, Footer },
 };
 </script>
 
