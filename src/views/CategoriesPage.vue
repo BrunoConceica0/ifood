@@ -2,7 +2,7 @@
   <article aria-label="Página de Categoria" class="container-primary">
     <div>
       <h1 class="category_title">
-        Pedir seu delivery no iFood é rápido e prático! Conheça as categorias
+        Pedir seu delivery no iFood é rápido e prático!
       </h1>
       <div class="category__menu" v-if="categories">
         <ul class="category__menu_list flex-row hover-zoom-shadow">

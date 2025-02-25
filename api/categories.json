@@ -674,7 +674,8 @@
       "distance_km": 0.8,
       "delivery_time_min": 30,
       "delivery_fee": 0,
-      "open": true
+      "open": true,
+      "imagem": "http://localhost:3001/img/pizza/pizza1.jpg"
     },
     {
       "id": "2",
@@ -685,7 +686,8 @@
       "distance_km": 0.7,
       "delivery_time_min": "80-90",
       "delivery_fee": 0,
-      "open": true
+      "open": true,
+      "imagem": "http://localhost:3001/img/pizza/pizza2.jpg"
     },
     {
       "id": "1",
@@ -696,7 +698,8 @@
       "distance_km": 0.8,
       "delivery_time_min": 30,
       "delivery_fee": 0,
-      "open": true
+      "open": true,
+      "imagem": "http://localhost:3001/img/pizza/pizza3.jpg"
     },
     {
       "id": "3",
@@ -707,7 +710,8 @@
       "distance_km": 2.7,
       "delivery_time_min": "30-40",
       "delivery_fee": 0,
-      "open": true
+      "open": true,
+      "imagem": "http://localhost:3001/img/pizza/pizza4.jpg"
     },
     {
       "id": "4",
@@ -718,7 +722,8 @@
       "distance_km": 0.9,
       "delivery_time_min": 30,
       "delivery_fee": 0,
-      "open": false
+      "open": false,
+      "imagem": "http://localhost:3001/img/pizza/pizza5.jpg"
     }
   ]
 }

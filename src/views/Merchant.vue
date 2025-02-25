@@ -10,23 +10,27 @@
         <Loading class="category-loading__item" v-for="n in 6" :key="n" />
       </div>
       <div class="cardstack-section-container" v-else>
-        <div class="" v-if="stores.length">
+        <div class="merchant-content" v-if="stores.length">
           <ul class="merchant-list__wrapper hover-zoom-shadow">
             <li
               class="merchant-list__item"
               v-for="(store, index) in stores"
               :key="index"
             >
-              <router-link to="#">
-                <div class="teste">
+              <router-link to="#" class="teste">
+                <div class="merchant-card__img">
+                  <img src="/img/img-categories/defaulImage.jpg" alt="" />
+                </div>
+                <div class="merchant-card">
                   <span class="merchant_title">
                     {{ store.store_name }}
                     <i class="bi bi-star-fill" v-if="store.champion"></i>
                   </span>
 
                   <span>
-                    <i class="bi bi-star-fill"></i> {{ store.store_type }} •
-                    {{ store.distance_km }} km
+                    <i class="bi bi-star-fill bi-yelow"></i>
+                    <span class="bi-yelow">{{ store.rating }}</span>
+                    {{ store.store_type }} • {{ store.distance_km }} km
                   </span>
                   <span v-if="store.delivery_fee > 0">
                     {{ store.delivery_time_min }} min •
@@ -52,11 +56,10 @@
             </li>
           </ul>
         </div> -->
+        <!-- Tirei as condições e loading, ainda nã conseguir quando for gerar requisição da paginação, o loaging e ativado -->
         <div class="merchant__btn" @click.prevent="addItemsMerchant">
-          <button v-if="!isMaxItemsMerchant" :disabled="isMaxItemsMerchant">
-            Ver mais
-          </button>
-          <Loading v-else class="merchant__btn__loading" />
+          <button :disabled="isMaxItemsMerchant">Ver mais</button>
+          <!-- <Loading v-else class="merchant__btn__loading" /> -->
         </div>
       </div>
     </section>
@@ -188,60 +191,5 @@ export default {
 */
 </script>
 <style scoped>
-.merchandise_container {
-  margin: 0 auto;
-}
-.merchant-list__wrapper {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 4rem;
-}
-.teste {
-  display: flex;
-  flex-direction: column;
-  font: var(--font-bp1);
-  color: var(--cor-text-secondary);
-  font-weight: 400;
-}
-.bi-star-fill {
-  font-size: 0.7rem;
-  background: var(--color-ifood);
-  color: white;
-  border-radius: 50%;
-  border: 2px solid var(--color-ifood);
-}
-.merchant_title {
-  font: var(--font-mp3);
-  color: var(--cor-text-primary);
-  font-weight: 600;
-}
-.merchant_subtitle-free {
-  color: var(--cor-free);
-}
-.merchant__btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid var(--cor-feild-input-border);
-  border-radius: 4px;
-  text-align: center;
-  cursor: pointer;
-  color: var(--cor-text-primary);
-  margin-top: 5rem;
-}
-.merchant__btn button {
-  background: transparent;
-  border: none;
-  padding: 1.5rem;
-  widows: 100%;
-}
-.merchant__btn:hover {
-  background: var(--color-ifood);
-}
-.merchant__btn:active {
-  opacity: 0.7;
-}
-.merchant__btn__loading {
-  padding: 1.5rem;
-}
+
 </style>

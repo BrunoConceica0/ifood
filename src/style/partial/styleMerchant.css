@@ -1,0 +1,78 @@
+.merchandise_container {
+  margin: 0 auto;
+}
+.merchant-list__wrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 40rem);
+  gap: 4rem;
+  border-radius: 8px;
+}
+.merchant-list__item {
+  border-radius: 8px;
+  padding: 2rem;
+}
+.merchant-card {
+  display: grid;
+  margin-left: 2rem;
+  font: var(--font-bp1);
+  color: var(--cor-text-secondary);
+  font-weight: 400;
+  max-width: 40rem;
+}
+.bi-star-fill {
+  font-size: 0.7rem;
+  background: var(--color-ifood);
+  color: white;
+  border-radius: 50%;
+  border: 2px solid var(--color-ifood);
+}
+.bi-yelow {
+  color: var(--cor-rating);
+  font-weight: bold;
+  font-size: var(--cor-rating);
+  background-color: transparent;
+  border: none;
+  margin-right: 0.2rem;
+}
+.merchant_title {
+  font: var(--font-mp3);
+  color: var(--cor-text-primary);
+  font-weight: 600;
+}
+.merchant_subtitle-free {
+  color: var(--cor-free);
+}
+.merchant__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--cor-feild-input-border);
+  border-radius: 4px;
+  text-align: center;
+  cursor: pointer;
+  color: var(--cor-text-primary);
+  margin-top: 5rem;
+}
+.merchant__btn button {
+  background: transparent;
+  border: none;
+  padding: 1.5rem;
+  widows: 100%;
+}
+.merchant__btn:hover {
+  background: var(--color-ifood);
+}
+.merchant__btn:active {
+  opacity: 0.7;
+}
+.merchant__btn__loading {
+  padding: 1.5rem;
+}
+.merchant-card__img {
+  max-width: 10rem;
+  height: 10rem;
+}
+.teste {
+  display: grid;
+  grid-template-columns: 10rem 2fr;
+}
